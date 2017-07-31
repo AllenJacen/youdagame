@@ -3,16 +3,21 @@
  */
 
 //装饰器函数，为睡醒添加属性，包括函数属性。
-var car=function(loc){
-    var obj={loc:loc};
-    extend(obj,methods);
+var Car=function(){
+   var obj={loc: loc};
+    obj.move=function(){
+        obj.loc++;
+    };
     return obj;
     };
-var methods = {
-    move : function(){
-        this.loc++;
-    },
-    on : function(){},
-    off : function(){}
+var Van =function(loc){
+    var obj =Car(loc);
+    obj.grab =function{/**/};
+    return obj;
+};
+var Cop=function(loc){
+    var obj=Car(loc);
+    obj.call=function(){/**/};
+    return obj;
 };
 
