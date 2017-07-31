@@ -12,7 +12,7 @@ var Car=function(){
     };
 var Van =function(loc){
     var obj =Car(loc);
-    obj.grab =function{/**/};
+    obj.grab =function(){/**/};
     return obj;
 };
 var Cop=function(loc){
