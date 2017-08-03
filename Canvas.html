@@ -3,14 +3,20 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-
 </head>
-<canvas id="c" width="200" height="200">
-</canvas>
 <body>
+<canvas id="c" width="525" height="295"></canvas>
 <script>
     var c=document.querySelector("#c");
     var ctx= c.getContext("2d");
+    var image=new Image();
+    image.onload=function(){
+        console.log("loadad image");
+        ctx.drawImage(image,10,10, c.width, c.height);
+        var savedImage = c.toDataURL();
+        window.open(savedImage);
+    }
+    image.src="./img/1.jpg";
 </script>
 </body>
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="c" width="500" height="500"></canvas>
+<script>
+    var c=document.querySelector("#c");
+    var ctx= c.getContext("2d");
+
+//    ctx.fillRect(100,100,100,100);
+//    ctx.strokeRect(50,50,50,50);
+//    ctx.fillStyle = "blue";
+    // Start at (0,0) and draw a 50px x 50px blue rectangle.
+//    ctx.fillRect(0,0,50,50);
+    // Start at (0,0) and clear a 25px x 25px rectangle.
+//    ctx.clearRect(0,0,25,25);
+  ctx.strokeRect(50,50,100,100);
+    ctx.beginPath();
+    ctx.moveTo(75,75);
+    ctx.lineTo(125,125);
+    ctx.lineTo(125,75);
+    ctx.lineTo(75,75);
+    ctx.fill();
+   /* ctx.beginPath();
+    ctx.moveTo(50,50);
+    ctx.lineTo(50,150);
+    ctx.lineTo(150,150);
+    ctx.lineTo(150,50);
+    ctx.lineTo(50,50);
+    ctx.stroke();*/
+    ctx.scale(2,2);// 缩放（Scaling）绘制矩形，放大到 200%，然后再次绘制矩形：
+    ctx.strokeRect(50,50,100,100);
+//    translate(x,y) 会将所有后续绘制命令水平移动 x 个像素，垂直移动 y
+// 个像素。
+    ctx.translate(20,40);
+    ctx.strokeRect(50,50,100,100);
+    /*ctx.rotate(angleRadians) 会将对象（通常）绕中心转动特定弧度。
+    你在学校时可能学习过弧度，但这里有一个方便的公式可以将度数值转化为弧度值
+     radians = degrees * (Math.PI/180)*/
+    ctx.rotate(45*Math.PI/180,50,50);
+    ctx.strokeRect(0,0,50,50);
+//    在你撤销之前，任何转换都适用于所有后续对象。
+
+</script>
+</body>
+</html>
